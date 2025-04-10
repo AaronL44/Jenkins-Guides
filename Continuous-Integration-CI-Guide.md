@@ -1,6 +1,107 @@
 # Guide to setting Up Continuous Integration (CI) in Jenkins
+![Jenkind CI/CD](images/CI-CD%20Diagram.png)
 
-## Step By Step Guide:
+## CI/CD (e) Explained:
+
+### Continuous Integration (CI)
+- **Definition**: CI is the practice of automatically testing and integrating code changes whenever developers push to a shared repository.
+- **Key Benefits**:
+  - Encourages developers to push code **early and often**.
+  - Increases **development speed** by allowing quick integration of individual contributions.
+  - Ensures the codebase remains **stable and testable** throughout development.
+
+---
+
+### Continuous Delivery vs. Continuous Deployment
+
+| Term | Description |
+|------|-------------|
+| **Continuous Delivery (CD)** | Code changes from CI are automatically prepared for release. The code is always in a **deployable state**, but deployment requires **manual approval** (e.g., pressing a "big red button"). |
+| **Continuous Deployment (CDE)** | Code changes are automatically tested and **released to end users** without any manual intervention—**no big red button**. If all tests pass, the code is deployed automatically. |
+
+---
+
+### Why Companies Choose CD Over CDE
+
+- **Manual control**: CD allows teams to review with stakeholders or align releases with marketing, business, or compliance schedules.
+- **Scheduled releases**: Some features or updates are planned for release on specific dates.
+- **Risk management**: Automatic deployment (CDE) is often used for small, low-risk changes like bug fixes, whereas larger or more sensitive updates go through CD.
+
+---
+
+### Benefits of CI/CD
+
+- Faster release of **new features and updates** (e.g., in games or apps).
+- Higher **developer productivity**.
+- Improved **code quality and reliability** through automated testing and consistent deployment processes.
+
+## Pros of Jenkins
+
+1. **Open Source & Free**  
+   Completely free to use, with strong community support and regular updates.
+
+2. **Highly Customisable**  
+   Supports 1,800+ plugins for integrating with virtually any tool (e.g., GitHub, Docker, Kubernetes, Slack).
+
+3. **Platform Independent**  
+   Runs on Windows, macOS, and Linux. Can also be run in containers (e.g., Docker) or in the cloud.
+
+4. **Strong Support for CI/CD Pipelines**  
+   Supports complex workflows via Jenkins Pipelines (written in Groovy) and also simpler freestyle jobs.
+
+5. **Large Community**  
+   Lots of documentation, tutorials, and forums for support.
+
+6. **Scalable**  
+   Can distribute builds across multiple machines (master-agent architecture) to speed up large builds and tests.
+
+7. **Active Ecosystem**  
+   Easily integrates with popular development, testing, and deployment tools.
+
+---
+
+## Cons of Jenkins
+
+1. **Steep Learning Curve**  
+   Especially when dealing with scripted pipelines, plugins, and advanced configurations.
+
+2. **UI Can Be Clunky**  
+   The web interface is dated and not always intuitive, especially compared to newer CI/CD tools.
+
+3. **Plugin Maintenance**  
+   Heavy reliance on plugins means frequent updates—and sometimes plugins break or conflict with each other.
+
+4. **Configuration Complexity**  
+   Setting up and maintaining Jenkins, especially in large teams or enterprise environments, can become complex and time-consuming.
+
+5. **Limited Built-in Analytics**  
+   Lacks advanced built-in analytics or dashboards without third-party tools or plugins.
+
+6. **Manual Scaling Challenges**  
+   While Jenkins can be scaled, it often requires manual setup (e.g., adding agents, managing load distribution).
+
+---
+
+## Typical Stages of a Jenkins Pipeline
+
+1. **SCM** – Source Code Management (e.g., Git) to track and manage code changes.
+2. **Build** – Compiling the source code and dependencies into an executable format.
+3. **Test** – Running automated or manual tests to ensure code functions as expected.
+4. **Package** – Bundling the code and dependencies into deployable units (e.g., `.tar`, `.zip`).
+5. **Deploy** – (In CDE) Automatically deploy the application.
+6. **Monitor** – Continuously track application performance and health in production.
+
+---
+
+## Competitors to Jenkins
+
+- **GitHub Actions**
+- **GitLab CI/CD**
+- **Azure DevOps**
+- **Spinnaker**
+
+
+# Step By Step Guide:
 
 ## Step 1: Test making projects on jenkins and chaining them together
 
