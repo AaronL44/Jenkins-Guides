@@ -291,4 +291,3 @@ Check the branches on github, it should show the dev branch inside the branches 
 - The reason we created a dev branch is for the CI of CI/CD. This means that we can push changes to the dev branch which Jenkins then tests before it is CD into the main branch of code. 
 - This is the whole idea of CI/CD.
 
-
