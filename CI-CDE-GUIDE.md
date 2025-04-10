@@ -508,7 +508,7 @@ The projects in Jenkins should be configured to run sequentially. Once a project
 
 Check the applicaiton to verify the change to the header was made:
 
-![alt text](image.png)
+![CDE change proof](images/CDE%20change%20proof.png)
 
 ### Pipeline Execution Overview:
 
