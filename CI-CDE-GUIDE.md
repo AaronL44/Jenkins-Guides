@@ -118,6 +118,7 @@ Open a gitbash window on your local machine and naviagte to the .ssh directory.
 Next, type the following command to generate an SSH key pair:
 `ssh-keygen -t rsa -b 4096 -C <"your email address">`
 - Make sure you use your email address.
+- WHY: Using the -t rsa flag generates a RSA key, which is widely accepted and secure. The -b 4096 flag specifies the length of the key for security, and the -C option adds a comment (usually your email) to identify the key.
 
 Choose a name for your key pair to differentiate them from previous keys.
 
@@ -142,7 +143,8 @@ Then navigate back to github and paste that public key into the key text box:
 
 ![Public key](images/Public%20key.png)
 
-Ensure you check "Allow write access"
+Ensure you check "Allow write access" 
+- This allows the changes to merge to main branch. Write access allows it to interact and make changes to the github repo (merge project later).
 
 Finally select "add key".
 
@@ -168,6 +170,8 @@ Check the "Discard old builds" setting again and set the "max # of builds to kee
 Check the "GitHub project" option as this project will be linked to github. 
 
 Navigate to your github repo tab on google and copy the url. Paste this url in the "Project url" textbox:
+
+WHY: Linking Jenkins with the GitHub repository ensures that Jenkins knows which repository to pull the code from for building and testing.
 
 ![github url for project url](images/github%20url%20for%20project%20url.png)
 ![Project url textbox](images/Project%20url%20textbox.png)
@@ -239,7 +243,7 @@ npm install
 npm test
 
 ````
-- These steps navigate to your app, install dependencies, and run tests—a typical part of a CI job in Jenkins.
+- WHY: These steps install dependencies (npm install) and run tests (npm test), which are essential for checking if the code is functioning properly before deployment.
 
 Click "save" to save the changes and click build to test it again. 
 
@@ -251,12 +255,15 @@ Navigate to the configure settings inside the CI project again.
 
 Change the "Branch Specifier (blank for 'any')" from "*/main" to "*/dev"
 
+- WHY: The dev branch is used for development and testing before it’s merged into the main branch. Changing the specifier ensures Jenkins builds from the correct branch.
+
 ![Branch specifier dev](images/Branch%20specifier%20dev.png)
 
 Scroll to the "Build Triggers" and select the "Github hook trigger for GITScm polling"
 
 ![BUILD TRIGGERS GITSCM](images/BUILD%20TRIGGERS%20GITSCM.png)
-- This tells github to listen for a webhook.
+
+- WHY: This tells Jenkins to automatically trigger the build process whenever GitHub sends a webhook (e.g., on pushing code to the repository), making the CI process continuous.
 
 Next, move to your github tab on google.
 
@@ -393,7 +400,7 @@ Inside the SCM setting change the "branch specifier" inside the "branches to bui
 
 ![Branches to build project 3](images/Branches%20to%20build%20project%203.png)
 
-- Changing the "Branches to build" in the SCM settings of a Jenkins project tells Jenkins which branch to pull code from and build.
+- WHY: The main branch is where stable code is deployed to production. This ensures only thoroughly tested code gets deployed.
   - So if you set it to main, Jenkins will:
   - Pull code from the main branch.
   - Build and test only the main branch.
@@ -501,6 +508,7 @@ git push -u origin dev
 ````
 
 - This should trigger the CI/CDE pipeline, as the push to the `dev` branch activates the webhook configured in GitHub. Jenkins will detect the change and begin the pipeline process automatically.
+- WHY: Testing the full pipeline validates that the code successfully goes from the development environment through testing, merging, and deployment, ensuring that the CI/CD process is fully automated and works end-to-end.
 
 The projects in Jenkins should be configured to run sequentially. Once a project (e.g., Project 1 or 2) completes successfully, it should automatically trigger the next project (e.g., Project 3) in the pipeline. This ensures a smooth flow from code testing to deployment without manual intervention.
 
