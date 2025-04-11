@@ -1,7 +1,7 @@
 # Guide to setting Up Continuous Integration (CI) & Continuous Deployment (CDE) in Jenkins
 ![Jenkind CI/CD](images/CI-CD%20Diagram.png)
 
-## CI/CD (e) Explained:
+## CI/CDE Explained:
 
 ### Continuous Integration (CI)
 - **Definition**: CI is the practice of automatically testing and integrating code changes whenever developers push to a shared repository.
