@@ -145,11 +145,11 @@ Navigate back to your GitBash windows and type the following commands:
 Once you log in select "Install suggested plugins" 
 - This will include all default plugins you need. You can also add anything else you need at a later stage.
 
-![Customize Jenkins page](image.png)
+![Customize Jenkins page](images/Customize%20Jenkins%20page.png)
 
 Once selected you should see a "Getting Started" page which shows you the plugins being installed on the jenkins server.
 
-![Getting Started](image.png)
+![Getting Started](images/Getting%20Started.png)
 
 Next, a "Create First Admin User" should pop up. Enter a username and password.
 - You will use this to login whenever you return to the server in the future.
@@ -159,11 +159,11 @@ Next, a "Create First Admin User" should pop up. Enter a username and password.
 Next, add the Jenkins URL to the instance configuration.
 - This is the AWS instance public ip address followed by the port 8080.
 
-![Instance config for jenkins](image.png)
+![Instance config for jenkins](images/Instance%20config%20for%20jenkins.png)
 
 You should now see your Jenkins dashboard after successful access to your jenkins server:
 
-![Jenkins Dashboard](image.png)
+![Jenkins Dashboard](images/Jenkins%20Dashboard.png)
 
 ## 5. Install NodeJS Plugin
 ### Why?
@@ -179,7 +179,7 @@ You should now see your Jenkins dashboard after successful access to your jenkin
 - Next go to **Tools** on Jenkins and find the NodeJs plugin. Then configure it to version you need.
 - Configure version 20.0 **Global Tool Configuration** 
 
-![Version 20 NodeJs](image.png)
+![Version 20 NodeJs](images/Version%2020%20NodeJs.png)
 
 ## 6. GitHub SSH Key Host Setup
 
@@ -195,7 +195,7 @@ GitHub public key known hosts found on google:
 
 Adding the "Known Host" to Jenkins settings known hosts to allow your SSH connection later as it will be a known host.
 
-![Known Host Jenkins](image.png)
+![Known Host Jenkins](images/Known%20Host%20Jenkins.png)
 
 ## Set up Projects on Jenkins
 **Go to CI/CDE Guide for the three projects setup**
@@ -248,7 +248,7 @@ Adding the "Known Host" to Jenkins settings known hosts to allow your SSH connec
 - Stop Jenkins server instance as a snapshot can only be taken when the server instance is stopped.
 - Go to **Actions > Create Image**
 
-![Actions image](image.png)
+![Actions image](images/Actions%20image.png)
 
 - Wait for the image to run. 
 - Launch new instance from AMI to test
